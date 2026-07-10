@@ -1,7 +1,7 @@
 // NovaCart Shopping Cart
 
 let cart = [];
-
+const cartCount = document.getElementById("cart-count");
 const buttons = document.querySelectorAll(".product button");
 
 buttons.forEach((button) => {
