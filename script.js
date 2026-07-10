@@ -9,7 +9,7 @@ buttons.forEach((button) => {
         const product = button.parentElement.querySelector("h3").innerText;
 
         cart.push(product);
-
+cartCount.innerText = cart.length;
         alert(`✅ ${product} added to cart!
 
 Items in cart: ${cart.length}`);
