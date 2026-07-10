@@ -1,10 +1,20 @@
+// NovaCart Shopping Cart
 
-// NovaCart JavaScript
+let cart = [];
 
-console.log("NovaCart Loaded Successfully!");
+const buttons = document.querySelectorAll(".product button");
 
-const button = document.querySelector(".hero button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const product =
+            button.parentElement.querySelector("h3").innerText;
 
-button.addEventListener("click", function () {
-    alert("🛒 Welcome to NovaCart!\nShopping features are coming soon.");
+        cart.push(product);
+
+        alert(
+            `✅ ${product} added to cart!\n\nItems in cart: ${cart.length}`
+        );
+
+        console.log(cart);
+    });
 });
