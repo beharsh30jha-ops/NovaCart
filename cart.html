@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaCart - Cart</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.cart-page{
+    padding:60px 8%;
+}
+
+.cart-item{
+    background:#1b2338;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-item button{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    margin-top:30px;
+    font-size:28px;
+    color:#38bdf8;
+}
+
+.checkout{
+    margin-top:25px;
+    padding:15px 30px;
+    border:none;
+    background:#38bdf8;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<section class="cart-page">
+
+<h1>🛒 Your Cart</h1>
+
+<div id="cartItems"></div>
+
+<h2 class="total" id="total"></h2>
+
+<button class="checkout">Checkout</button>
+
+</section>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
