@@ -1,19 +1,32 @@
-// NovaCart Shopping Cart
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let cart = [];
-const cartCount = document.getElementById("cart-count");
+updateCartCount();
+
 const buttons = document.querySelectorAll(".product button");
 
-buttons.forEach((button) => {
+buttons.forEach(button => {
     button.addEventListener("click", () => {
+
         const product = button.parentElement.querySelector("h3").innerText;
+        const price = button.parentElement.querySelector("p").innerText;
 
-        cart.push(product);
-cartCount.innerText = cart.length;
-        alert(`✅ ${product} added to cart!
+        cart.push({
+            name: product,
+            price: price
+        });
 
-Items in cart: ${cart.length}`);
+        localStorage.setItem("cart", JSON.stringify(cart));
 
-        console.log(cart);
+        updateCartCount();
+
+        alert("✅ Added to Cart!");
     });
 });
+
+function updateCartCount(){
+    const count = document.getElementById("cart-count");
+
+    if(count){
+        count.innerText = cart.length;
+    }
+}
