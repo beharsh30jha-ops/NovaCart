@@ -10,10 +10,17 @@ buttons.forEach(button => {
         const product = button.parentElement.querySelector("h3").innerText;
         const price = button.parentElement.querySelector("p").innerText;
 
-        cart.push({
-            name: product,
-            price: price
-        });
+        const existing = cart.find(item => item.name === product);
+
+if (existing) {
+    existing.quantity++;
+} else {
+    cart.push({
+        name: product,
+        price: price,
+        quantity: 1
+    });
+}
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
