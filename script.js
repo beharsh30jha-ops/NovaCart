@@ -1,4 +1,3 @@
-localStorage.removeItem("cart");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 updateCartCount();
